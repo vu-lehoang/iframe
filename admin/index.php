@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 error_reporting(0);
 ?>
@@ -46,19 +47,33 @@ error_reporting(0);
         display: block;
         clear: both;
     }
+
+    img.image_abc {
+        cursor: pointer;
+    }
 </style>
 
 
 <?php
 
-$msg = "";
+
 
 // check if the user has clicked the button "UPLOAD" 
 $filename = $_SESSION['file_img'];
 
-if (isset($_POST['uploadfile'])) {
 
-    $filename = $_FILES["choosefile"]["name"];
+if (isset($_POST['uploadfile'])) {
+    // $filename = $_FILES["choosefile"]["name"];
+
+
+    $conMeo = $_POST['fileAbc'];
+    if ($_POST['fileAbc'] != null) {
+        $filename = $conMeo;
+    } else {
+        $filename = $_FILES["choosefile"]['name'];
+    }
+
+
     $tempname = $_FILES["choosefile"]["tmp_name"];
 
     $thumbnail = $_FILES['choosefile'];
@@ -90,23 +105,50 @@ if ($filename != null) {
 } else {
     $_SESSION['file_img'] = 'frame-1.png';
 }
-
+// unlink()
 
 ?>
 <div id="wrapper">
 
     <form method="POST" action="" enctype="multipart/form-data">
-
+        <input type="hidden" name="fileAbc" class="input-file">
         <input type="file" name="choosefile" value="" />
         <button type="submit" name="uploadfile">
             UPLOAD
         </button>
-
         <img src="../img/frames/<?= $filename ?  $filename : 'frame-1.png' ?>" alt="">
     </form>
     <a href="/iframe/index.php">Quay về trang chủ</a>
+    <?php
+    $out = array();
+    foreach (glob('../img/frames/*') as $filename) {
+        $p = pathinfo($filename);
 
+        $out[] = $p['basename'];
+    }
+
+
+    ?>
+
+    <?php foreach ($out as $item) : ?>
+        <img src="../img/frames/<?= $item ?>" name="<?= $item ?>" class="image_abc" alt="">
+    <?php endforeach ?>
 </div>
 </body>
+<script>
+    const imgAba = document.querySelectorAll('img.image_abc');
+    imgAba.forEach((item) => {
+        item.addEventListener("click", () => {
+            let attItem = item.getAttribute('name');
+            const input = document.querySelector(".input-file");
+            input.value = attItem;
+            console.log(input.value);
+            console.log(attItem);
+        })
+    })
+</script>
+<?php
+
+?>
 
 </html>

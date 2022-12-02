@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION['file_img-1'] = 'frame-1.png';
+?>
 
 <head>
   <meta charset="utf-8" />
@@ -39,7 +41,9 @@
               <img src="img/logo.png" class="h-12">
             </div>
           </div>
-          <h1 id="fileanh" style="display:none"><?php echo  $_SESSION['file_img']; ?></h1>
+          <h1 id="fileanh" style="display: none"><?php
+
+                                                  echo ($_SESSION['file_img']) ? $_SESSION['file_img'] : $_SESSION['file_img-1']; ?></h1>
           <div class="ml-auto flex-shrink-0 flex items-center">
             <a href="https://minhduy.vn">
               <span class="inline-flex items-center px-6 py-3 rounded-full text-base font-bold leading-5 bg-secondary text-white hover:bg-primary transition duration-300 ease-in-out">
@@ -85,13 +89,13 @@
                       <div class="mt-4 grid grid-cols-3 gap-4">
 
 
-                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./img/previews/preview-1.png" alt="">
-
+                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./img/frames/<?= ($_SESSION['file_img']) ? $_SESSION['file_img'] : $_SESSION['file_img-1'];  ?>" alt="">
+                        <!-- 
                         <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/preview-2.png" alt="">
 
                         <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-1.png" alt="" style="display: none !important;">
 
-                        <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-2.png" alt="" style="display: none !important;">
+                        <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-2.png" alt="" style="display: none !important;"> -->
                       </div>
                     </li>
 

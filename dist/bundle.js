@@ -1,5 +1,3 @@
-
-
 !(function t(e, i, r) {
   function n(s, a) {
     if (!i[s]) {
@@ -153,6 +151,7 @@
                 .addEventListener("click", function () {
                   a(e, "./img/frames/frame-1.png");
                 }),
+              /*
               document
                 .getElementById("frame-2")
                 .addEventListener("click", function () {
@@ -163,6 +162,7 @@
                 .addEventListener("click", function () {
                   a(e, "./img/frames/frame-3.png");
                 }),
+                */
               document.getElementById("download").addEventListener(
                 "click",
                 function () {
