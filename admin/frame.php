@@ -34,17 +34,6 @@ error_reporting(0);
   <link href="../assets/css/light-theme.css" rel="stylesheet" />
   <link href="../assets/css/semi-dark.css" rel="stylesheet" />
   <link href="../assets/css/header-colors.css" rel="stylesheet" />
-  <style>
-    .btn-close{
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 15px;
-      filter: brightness(100%);
-      background: transparent 
-      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='darkred'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat
-    }
-  </style>
   <title>Snacked - Bootstrap 5 Admin Template</title>
 </head>
 
@@ -71,7 +60,7 @@ error_reporting(0);
                   <li>
                      <a class="dropdown-item" href="#">
                        <div class="d-flex align-items-center">
-                          <img src="../assets/images/frames/logo_favicon.png" alt="" class="rounded-circle" width="54" height="54">
+                          <img src="../assets/images/logo.png" alt="" class="rounded-circle" width="54" height="54">
                           <div class="ms-3">
                             <h6 class="mb-0 dropdown-user-name">Minh Duy Solutions</h6>
                             <small class="mb-0 dropdown-user-designation text-secondary">Admin</small>
@@ -262,7 +251,7 @@ foreach (glob('../assets/images/frames/*') as $filename) {
       <div class="row row-cols-1 row-cols-lg-5 g-lg-5">
         <?php foreach ($out1 as $key => $item) : ?>
             <div class="col col-img">
-              <div class="card">
+              <div class="card card-item">
                   <img src="../assets/images/frames/<?= $item ?>" name="img_abas" name_src="<?= $item ?>" class="image_abc card-img-top" 
                   alt="" style="width: 292px; height: 292px">
                   <!-- <div class="card-body" style="position:relative"> -->
@@ -293,11 +282,6 @@ foreach (glob('../assets/images/frames/*') as $filename) {
             console.log(attItem);
         })
     })
-    imgAba.forEach(item=> item.addEventListener("click", handleClick));
-    function handleClick (e){
-      imgAba.forEach(item=> item.style="border: none");
-      e.target.style="border: 1px solid blue";
-    }
     const btnUpdateImg = document.querySelector("#choosefile");
     btnUpdateImg.addEventListener("change", function(){
         const img= document.querySelector("#img");
