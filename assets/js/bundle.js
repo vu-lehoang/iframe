@@ -94,7 +94,7 @@
                   "object:rotating": s,
                 }),
                 e.setOverlayImage(
-                  "./img/frames/" + idAnh,
+                  "./assets/images/frames/" + idAnh,
                   function () {
                     e.overlayImage.scaleToWidth(e.getWidth()), e.renderAll();
                   },

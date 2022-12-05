@@ -1,8 +1,5 @@
 <!doctype html>
 <html lang="en">
-<?php session_start();
-$_SESSION['file_img-1'] = 'frame-1.png';
-?>
 
 <head>
   <meta charset="utf-8" />
@@ -36,20 +33,22 @@ $_SESSION['file_img-1'] = 'frame-1.png';
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <img src="img/logo.png" class="h-12">
+              <img src="./assets/images/logo.png" class="h-12">
             </div>
           </div>
           <?php
           $out = array();
-          foreach (glob('./img/frames/*') as $filename) {
+          foreach (glob('./assets/images/frames/*') as $filename) {
             $p = pathinfo($filename);
             $out[] = $p['basename'];
           }
           ?>
+
           <h1><?php
               $index = count($out) - 1;
-              echo $out[$index]; ?></h1>
-          <h1 id="fileanh" style="display: none"><?php if(isset($out[$index])) echo $out[$index];  else echo $out[$index]; ?></h1>
+              ?></h1>
+          <h1 id="fileanh" style="display: none"><?php if (isset($out[$index])) echo $out[$index];
+                                                  else echo $out[$index]; ?></h1>
           <div class="ml-auto flex-shrink-0 flex items-center">
             <a href="https://minhduy.vn">
               <span class="inline-flex items-center px-6 py-3 rounded-full text-base font-bold leading-5 bg-secondary text-white hover:bg-primary transition duration-300 ease-in-out">
@@ -177,7 +176,7 @@ $_SESSION['file_img-1'] = 'frame-1.png';
 
         </div>
         <div class="mt-12 px-4 sm:px-16 md:text-right">
-          <img src="img/logo.png" class="h-16 md:float-right">
+          <img src="./assets/images/logo.png" class="h-16 md:float-right">
         </div>
       </div>
       <div class="mt-12 border-t border-gray-200 pt-8">
