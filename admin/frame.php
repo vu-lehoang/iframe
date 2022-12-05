@@ -250,8 +250,6 @@ error_reporting(0);
       </div>
     </div>
   </div>
-
-
 </body>
 <script>
   // get name url
@@ -347,11 +345,9 @@ error_reporting(0);
     </div>
   </div>
 </div>
-<!--end switcher-->
+
 
 </div>
-<!--end wrapper-->
-<!-- Bootstrap bundle JS -->
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 <!--plugins-->
 <script src="../assets/js/jquery.min.js"></script>
