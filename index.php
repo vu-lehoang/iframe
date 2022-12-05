@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="en">
+<?php session_start();
+$_SESSION['file_img-1'] = 'frame-1.png';
+?>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel="stylesheet" href="./dist/style.css" />
-  <script src="./dist/bundle.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/bundle.js"></script>
 
   <title>Công cụ tạo khung cho ảnh avatar</title>
   <meta name="description" content="Một công cụ đơn giản để tạo ảnh hồ sơ được đóng khung cho phương tiện truyền thông xã hội nhằm hỗ trợ một mục tiêu. Tự động tạo một trang web tĩnh dựa trên số lượng hình ảnh khung được cung cấp.">
@@ -15,12 +19,12 @@
   <meta property="og:title" content="Công cụ tạo khung avatar - JCI Khánh Hoà" />
   <meta property="og:description" content="Công cụ tạo khung avatar - JCI Khánh Hoà" />
   <meta property="og:url" content="" />
-  <meta property="og:image" content="/img/og-image.png" />
+  <meta property="og:image" content="./images/og-image.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
   <meta name="twitter:card" content="Công cụ tạo khung avatar - JCI Khánh Hoà" />
   <meta name="twitter:description" content="Công cụ tạo khung avatar - JCI Khánh Hoà" />
-  <meta name="twitter:image" content="/img/" />
+  <meta name="twitter:image" content="./images/" />
   <meta name="twitter:site" content="" />
 </head>
 
@@ -94,9 +98,7 @@
                         <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./img/frames/<?= ($out[$index]) ? $out[$index]   : $out[0];  ?>" alt="">
                         <!-- 
                         <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/preview-2.png" alt="">
-
                         <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-1.png" alt="" style="display: none !important;">
-
                         <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-2.png" alt="" style="display: none !important;"> -->
                       </div>
                     </li>
