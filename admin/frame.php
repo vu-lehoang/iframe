@@ -21,6 +21,7 @@ error_reporting(0);
   <link href="../assets/css/bootstrap-extended.css" rel="stylesheet" />
   <link href="../assets/css/style.css" rel="stylesheet" />
   <link href="../assets/css/icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/admin.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   
@@ -63,7 +64,7 @@ error_reporting(0);
               <li class="nav-item dropdown dropdown-user-setting">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                   <div class="user-setting d-flex align-items-center">
-                    <img src="../assets/images/frames/logo_favicon.png" class="user-img" alt="">
+                    <img src="../assets/images/logo.png" class="user-img" alt="">
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -79,47 +80,6 @@ error_reporting(0);
                      </a>
                    </li>
                    <li><hr class="dropdown-divider"></li>
-                   <!-- <li>
-                      <a class="dropdown-item" href="pages-user-profile.html">
-                         <div class="d-flex align-items-center">
-                           <div class=""><i class="bi bi-person-fill"></i></div>
-                           <div class="ms-3"><span>Profile</span></div>
-                         </div>
-                       </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                         <div class="d-flex align-items-center">
-                           <div class=""><i class="bi bi-gear-fill"></i></div>
-                           <div class="ms-3"><span>Setting</span></div>
-                         </div>
-                       </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="index2.html">
-                         <div class="d-flex align-items-center">
-                           <div class=""><i class="bi bi-speedometer"></i></div>
-                           <div class="ms-3"><span>Dashboard</span></div>
-                         </div>
-                       </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                         <div class="d-flex align-items-center">
-                           <div class=""><i class="bi bi-piggy-bank-fill"></i></div>
-                           <div class="ms-3"><span>Earnings</span></div>
-                         </div>
-                       </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                         <div class="d-flex align-items-center">
-                           <div class=""><i class="bi bi-cloud-arrow-down-fill"></i></div>
-                           <div class="ms-3"><span>Downloads</span></div>
-                         </div>
-                       </a>
-                    </li> -->
-                    <!-- <li><hr class="dropdown-divider"></li> -->
                     <li>
                       <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
                          <div class="d-flex align-items-center">
@@ -140,7 +100,7 @@ error_reporting(0);
         <aside class="sidebar-wrapper" data-simplebar="true">
           <div class="sidebar-header">
             <div>
-              <img src="../assets/images/frames/logo_favicon.png" class="logo-icon" alt="logo icon">
+              <img src="../assets/images/logo.png" class="logo-icon" alt="logo icon">
             </div>
             <div>
               <h4 class="logo-text">MDSCO</h4>
@@ -150,19 +110,6 @@ error_reporting(0);
           </div>
           <!--navigation-->
           <ul class="metismenu" id="menu">
-            <!-- <li>
-              <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bi bi-house-fill"></i>
-                </div>
-                <div class="menu-title">Dashboard</div>
-              </a>
-              <ul>
-                <li> <a href="index.html"><i class="bi bi-circle"></i>Default</a>
-                </li>
-                <li> <a href="index2.html"><i class="bi bi-circle"></i>Alternate</a>
-                </li>
-              </ul>
-            </li> -->
             <li>
               <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-grid-fill"></i>
@@ -170,20 +117,10 @@ error_reporting(0);
                 <div class="menu-title">Application</div>
               </a>
               <ul>
-                <!-- <li> <a href="app-emailbox.html"><i class="bi bi-circle"></i>Email</a>
-                </li> -->
+                
                 <li> <a href="frame.php"><i class="bi bi-circle"></i>Frame</a>
                 </li>
-                <!-- <li> <a href="app-chat-box.html"><i class="bi bi-circle"></i>Chat Box</a>
-                </li>
-                <li> <a href="app-file-manager.html"><i class="bi bi-circle"></i>File Manager</a>
-                </li>
-                <li> <a href="app-to-do.html"><i class="bi bi-circle"></i>Todo List</a>
-                </li>
-                <li> <a href="app-invoice.html"><i class="bi bi-circle"></i>Invoice</a>
-                </li>
-                <li> <a href="app-fullcalender.html"><i class="bi bi-circle"></i>Calendar</a>
-                </li> -->
+          
               </ul>
             </li>
 
@@ -197,65 +134,10 @@ error_reporting(0);
        <!--start content-->
        <main class="page-content">
             <?php
-// check if the user has clicked the button "UPLOAD" 
-/*
-$filename = $_SESSION['file_img'];
-if (isset($_POST['btn-xoa'])){
-  $conMeo = $_POST['fileAbc'];
-  if ($_POST['fileAbc'] != null) {
-      $filename = $conMeo;
-  } else {
-      $filename = $_FILES["choosefile"]['name'];
-  }
-  $imgpath= "../assets/images/frames/".$filename;
-  if (!unlink($imgpath)){
-    echo '<script>alert("ko thành công'.$filename.'")</script>';
-  }
-  else {
-    echo '<script>alert(" thành công")</script>';
-  }
-}
-if (isset($_POST['btn'])){
-  $conMeo = $_POST['fileAbc'];
-    if ($_POST['fileAbc'] != null) {
-        $filename = $conMeo;
-    } else {
-        $filename = $_FILES["choosefile"]['name'];
-    }
-}
-if (isset($_POST['uploadfile'])) {
-    // $filename = $_FILES["choosefile"]["name"];
-    // $conMeo = $_POST['fileAbc'];
-    // if ($_POST['fileAbc'] != null) {
-    //     $filename = $conMeo;
-    // } else {
-    //     $filename = $_FILES["choosefile"]['name'];
-    // }
-    $tempname = $_FILES["choosefile"]["tmp_name"];
-    $thumbnail = $_FILES['choosefile'];
-    $thumbnail_name = $thumbnail['name'];
-    $thumbnail_tmp_name = $thumbnail['tmp_name'];
-    $thumbanil_description_path = '../assets/images/frames/' . $thumbnail_name;
-    // make sure file is an image
-    $allowed_files = ['png', 'jpg', 'jpeg'];
-    // Tách chuỗi sang mảng
-    $extension = explode('.', $thumbnail_name);
-    // lấy ra giá trị của cùng trong mảng
-    $extension = end($extension);
-    if (in_array($extension, $allowed_files)) {
-        if ($thumbnail['size'] < 20000000) {
-            // upload thumbnail
-            move_uploaded_file($thumbnail_tmp_name, $thumbanil_description_path);
-        } else {
-            echo 'loi up load file';
-        }
-    } else {
-        echo 'loi dinh dang anh';
-    }
-}
-*/
-// check if the user has clicked the button "UPLOAD" 
-
+            if (isset($_POST['btn-xoa'])) {
+              $abvca = $_POST['hiddenInput'];
+              unlink("../assets/images/frames/$abvca");
+            }
 $filename = $_SESSION['file_img'];
 $err = '';
 if (isset($_POST['uploadfile'])) {
@@ -264,47 +146,45 @@ if (isset($_POST['uploadfile'])) {
 
     if ($_POST['fileAbc'] != null) {
         $time = time();
-        // echo $time;
         $cat =  explode("-", $_POST['fileAbc']);
         $newName = $time . "-" . $cat[1];
         $old = "../assets/images/frames/" . $_POST['fileAbc'];
         $new = "../assets/images/frames/" . $newName;
-
         rename($old, $new);
-        // $filename = $conMeo;
-    } else {
-        $filename = $_FILES["choosefile"]['name'];
     }
-
-    $time = time();
-    // $_SESSION['choose_file'] =  $time . '-' . $_FILES["choosefile"]['name'];
-    $tempname = $_FILES["choosefile"]["tmp_name"];
-
-    $thumbnail = $_FILES['choosefile'];
-
-    $thumbnail_name = $time . '-' .  $thumbnail['name'];
-    $thumbnail_tmp_name = $thumbnail['tmp_name'];
-    $thumbanil_description_path = '../assets/images/frames/' . $thumbnail_name;
-    // make sure file is an image
-    $allowed_files = ['png', 'jpg', 'jpeg'];
-    // Tách chuỗi sang mảng
-    $extension = explode('.', $thumbnail_name);
-    // lấy ra giá trị của cùng trong mảng
-    $extension = end($extension);
-    if (in_array($extension, $allowed_files)) {
-        if ($thumbnail['size'] < 20000000) {
-            // upload thumbnail
-            $catchuoi = explode('-', $thumbnail_name);
-            if (checkFolder("../assets/images/frames/*", $catchuoi[1]))
+    else{
+      $time = time();
+      // $_SESSION['choose_file'] =  $time . '-' . $_FILES["choosefile"]['name'];
+      $tempname = $_FILES["choosefile"]["tmp_name"];
+  
+      $thumbnail = $_FILES['choosefile'];
+  
+      $thumbnail_name = $time . '-' .  $thumbnail['name'];
+      $thumbnail_tmp_name = $thumbnail['tmp_name'];
+      $thumbanil_description_path = '../assets/images/frames/' . $thumbnail_name;
+      // make sure file is an image
+      $allowed_files = ['png', 'jpg', 'jpeg'];
+      // Tách chuỗi sang mảng
+      $extension = explode('.', $thumbnail_name);
+      // lấy ra giá trị của cùng trong mảng
+      $extension = end($extension);
+      if (in_array($extension, $allowed_files)) {
+          if ($thumbnail['size'] < 20000000) {
+              $catchuoi = explode('-', $thumbnail_name);
+              if (checkFolder("../assets/images/frames/*", $catchuoi[1]))
+              {
                 move_uploaded_file($thumbnail_tmp_name, $thumbanil_description_path);
-            // header('location: ../index.php');
+              }
 
-        } else {
-            $err = '';
-        }
-    } else {
-      $err = '';
-    }
+
+          } else {
+              $err = '';
+          }
+      } else {
+        $err = '';
+      }
+    } 
+    
 }
 function checkFolder($link, $str)
 {
@@ -324,13 +204,7 @@ foreach (glob('../assets/images/frames/*') as $filename) {
     $out_folder[] = $p['basename'];
 }
 
-if (isset($_POST['btn-xoa'])) {
-  $abvca = $_POST['hiddenInput'];
 
-  unlink("../assets/images/frames/$abvca");
-  header("location: ./");
-} else {
-}
 ?>
 <?php $out1 = array();
 foreach (glob('../assets/images/frames/*') as $filename) {
@@ -353,9 +227,9 @@ foreach (glob('../assets/images/frames/*') as $filename) {
                 <div class="col d-flex">
                   <div class="card rounded-4 w-100">
                     <div class="card-body">
-                      <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Chọn khung ảnh mới:</h1>
+                      <h1 class="large fs-6 my-2 primary " style="font-weight: bold">Chọn khung ảnh mới:</h1>
                         <div class="image-preview" align="center">
-                          <img src="../assets/images/upload.png" alt="" id="img">
+                          <img src="../assets/images/upload.png" class="preview-img" alt="" id="img">
                           <input type="hidden" name="fileAbc" class="input-file">
                           <input type="file" name="choosefile" value="" id ="choosefile" style="display:none"/>
                           <div style="margin-top: 10px"></div>
@@ -371,7 +245,7 @@ foreach (glob('../assets/images/frames/*') as $filename) {
                   <div class="card rounder-4 w-100">
                     <div class="card-body">
                       <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Khung ảnh đang dùng:</h1>
-                      <img src="../assets/images/frames/<?php $index = count($out_folder) - 1; ;echo ($out_folder[$index])?$out_folder[$index]:$out[0]?>" alt="">
+                      <img class="img-choice" src="../assets/images/frames/<?php $index = count($out_folder) - 1; ;echo ($out_folder[$index])?$out_folder[$index]:$out[0]?>" alt="">
                     </div>
                   </div>
             </form>
@@ -384,8 +258,8 @@ foreach (glob('../assets/images/frames/*') as $filename) {
 <div class="row">
   <div class="card rounded-4">
     <div class="card-body">
-      <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Khung ảnh có sẵn:</h1>
-      <div class="row row-cols-1 row-cols-lg-3 justify-content-center g-lg-5">
+      <h1 class="large fs-6 my-2 primary mb-3 " style="font-weight: bold">Khung ảnh có sẵn:</h1>
+      <div class="row row-cols-1 row-cols-lg-5 g-lg-5">
         <?php foreach ($out1 as $key => $item) : ?>
             <div class="col col-img">
               <div class="card">
@@ -409,22 +283,6 @@ foreach (glob('../assets/images/frames/*') as $filename) {
 
 </body>
 <script>
-    // const btnActive = document.querySelectorAll('.btn.btn-success');
-    // btnActive.forEach((item) => {
-    //     item.addEventListener("click", () => {
-    //         const input = document.querySelector(".input-file");
-    //         input.value = item.value;
-    //         console.log(input.value);
-    //     })
-    // })
-    // const btnDeleteActive = document.querySelectorAll('.btn.btn-warning');
-    // btnDeleteActive.forEach((item) => {
-    //     item.addEventListener("click", () => {
-    //         const input = document.querySelector(".input-file");
-    //         input.value = item.value;
-    //         console.log(input.value);
-    //     })
-    // })
     const imgAba = document.querySelectorAll('img.image_abc');
     imgAba.forEach((item) => {
         item.addEventListener("click", () => {
@@ -447,596 +305,7 @@ foreach (glob('../assets/images/frames/*') as $filename) {
         img.src=window.URL.createObjectURL(btnUpdateImg.files[0]);
     });
 </script>
-<?php
 
-?>
-             
-             <!-- <div class="row">
-                <div class="col-12 col-lg-8 col-xl-8 d-flex">
-                   <div class="card w-100 rounded-4">
-                     <div class="card-body">
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="mb-0">Revenue History</h6>
-                        <div class="fs-5 ms-auto dropdown">
-                           <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                             <ul class="dropdown-menu">
-                               <li><a class="dropdown-item" href="#">Action</a></li>
-                               <li><a class="dropdown-item" href="#">Another action</a></li>
-                               <li><hr class="dropdown-divider"></li>
-                               <li><a class="dropdown-item" href="#">Something else here</a></li>
-                             </ul>
-                         </div>
-                       </div>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="">
-                          <h4 class="text-success mb-0">$9,279</h4>
-                          <p class="mb-0">Revenue</p>
-                        </div>
-                        <div class="vr"></div>
-                        <div class="">
-                          <h4 class="text-pink mb-0">$5,629</h4>
-                          <p class="mb-0">Investment</p>
-                        </div>
-                      </div>
-                        <div id="chart1"></div>
-                     </div>
-                   </div>
-                </div>
-                <div class="col-12 col-lg-4 col-xl-4 d-flex">
-                  <div class="card w-100 rounded-4">
-                    <div class="card-body">
-                     <div class="d-flex align-items-center mb-3">
-                       <h6 class="mb-0">Task Overview</h6>
-                       <div class="fs-5 ms-auto dropdown">
-                          <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                      </div>
-                       <div id="chart2"></div>
-                    </div>
-                    <ul class="list-group list-group-flush mb-0 shadow-none">
-                      <li class="list-group-item bg-transparent border-top"><i class="bi bi-circle-fill me-2 font-weight-bold text-primary"></i> Complete <span class="float-end">120</span></li>
-                      <li class="list-group-item bg-transparent"><i class="bi bi-circle-fill me-2 font-weight-bold text-orange"></i> In Progress <span class="float-end">110</span></li>
-                      <li class="list-group-item bg-transparent"><i class="bi bi-circle-fill me-2 font-weight-bold text-info"></i> Started <span class="float-end">70</span></li>
-                    </ul>
-                  </div>
-               </div>
-
-             </div>  -->
-             <!--end row-->
-
-             <!-- <div class="row row-cols-1 row-cols-lg-4 radial-charts g-4">
-               <div class="col">
-                  <div class="card rounded-4">
-                    <div class="card-body">
-                      <div class="text-center">
-                        <p class="mb-1">Orders</p>
-                        <h4 class="">9,254</h4>
-                      </div>
-                       <div class="">
-                          <div id="chart3"></div>
-                       </div>
-                      <div class="text-center">
-                        <p class="mb-1">Completed</p>
-                        <h4 class="">5632</h4>
-                      </div>
-                    </div>
-                  </div>
-               </div>
-               <div class="col">
-                <div class="card rounded-4">
-                  <div class="card-body">
-                    <div class="text-center">
-                      <p class="mb-1">Unique Visitors</p>
-                      <h4 class="">5,2684</h4>
-                    </div>
-                     <div class="">
-                        <div id="chart4"></div>
-                     </div>
-                    <div class="text-center">
-                      <p class="mb-1">Increased since Last Week</p>
-                      <h4 class="">25%</h4>
-                    </div>
-                  </div>
-                </div>
-             </div>
-             <div class="col">
-              <div class="card rounded-4">
-                <div class="card-body">
-                  <div class="text-center">
-                    <p class="mb-1">Impressions</p>
-                    <h4 class="">7,362</h4>
-                  </div>
-                   <div class="">
-                      <div id="chart5"></div>
-                   </div>
-                  <div class="text-center">
-                    <p class="mb-1">Increased since Last Week</p>
-                    <h4 class="">45%</h4>
-                  </div>
-                </div>
-              </div>
-           </div>
-           <div class="col">
-            <div class="card rounded-4">
-              <div class="card-body">
-                <div class="text-center">
-                  <p class="mb-1">Followers</p>
-                  <h4 class="">4278K</h4>
-                </div>
-                 <div class="">
-                    <div id="chart6"></div>
-                 </div>
-                <div class="text-center">
-                  <p class="mb-1">Increased since Last Week</p>
-                  <h4 class="">55%</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>end row -->
-
-
-        <!-- <div class="row">
-           <div class="col-12 col-lg-6 col-xl-6 d-flex">
-             <div class="card rounded-4 w-100">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <h6 class="mb-0">Sales By Countries</h6>
-                    <div class="fs-5 ms-auto dropdown">
-                       <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                         <ul class="dropdown-menu">
-                           <li><a class="dropdown-item" href="#">Action</a></li>
-                           <li><a class="dropdown-item" href="#">Another action</a></li>
-                           <li><hr class="dropdown-divider"></li>
-                           <li><a class="dropdown-item" href="#">Something else here</a></li>
-                         </ul>
-                     </div>
-                   </div>
-                   <div id="world-map" style="height: 242px;"></div>
-                </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center">
-                  <tbody>
-                    <tr>
-                   <td><i class="flag-icon flag-icon-gb"></i></td>
-                   <td><i class="bi bi-circle-fill me-2 text-primary"></i> Russia</td>
-                   <td><p class="mb-0">Sales: <span class="fw-bold">28,000</span></p></td>
-                   <td>40%</td>
-                   </tr>
-                    <tr>
-                   <td><i class="flag-icon flag-icon-au"></i></td>
-                   <td><i class="bi bi-circle-fill me-2 text-warning"></i> Australia</td>
-                   <td><p class="mb-0">Sales: <span class="fw-bold">58,000</span></p></td>
-                   <td>60%</td>
-                   </tr>
-                    <tr>
-                   <td><i class="flag-icon flag-icon-us"></i></td>
-                   <td><i class="bi bi-circle-fill me-2 text-success"></i> United States</td>
-                   <td><p class="mb-0">Sales: <span class="fw-bold">72,000</span></p></td>
-                   <td>30%</td>
-                   </tr>
-                    <tr>
-                   <td><i class="flag-icon flag-icon-in"></i></td>
-                   <td><i class="bi bi-circle-fill me-2 text-secondary"></i> India</td>
-                   <td><p class="mb-0">Sales: <span class="fw-bold">68,000</span></p></td>
-                   <td>55%</td>
-                   </tr>
-                  </tbody>
-                  </table>
-                </div>
-             </div>
-           </div>
-           <div class="col-12 col-lg-6 col-xl-6 d-flex">
-            <div class="card rounded-4 w-100">
-               <div class="card-body">
-                 <div class="d-flex align-items-center mb-3">
-                   <h6 class="mb-0">Top Selling Products</h6>
-                   <div class="fs-5 ms-auto dropdown">
-                      <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="d-flex align-items-start gap-3">
-                      <div class="product-box border">
-                        <img src="assets/images/products/05.png" alt="product img">
-                      </div>
-                      <div class="flex-grow-1">
-                        <div class="progress-wrapper">
-                          <p class="my-2">iPhone 11 - A24512 <span class="float-end">(4,216 Orders) <span class="ms-3 fw-bold">42%</span></span></p>
-                          <div class="progress" style="height: 4px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   <hr>
-                   <div class="d-flex align-items-start gap-3">
-                      <div class="product-box border">
-                        <img src="assets/images/products/07.png" alt="product img">
-                      </div>
-                      <div class="flex-grow-1">
-                        <div class="progress-wrapper">
-                          <p class="my-2">iPhone 11 - A24512 <span class="float-end">(4,216 Orders) <span class="ms-3 fw-bold">42%</span></span></p>
-                          <div class="progress" style="height: 4px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   <hr>
-                    <div class="d-flex align-items-start gap-3">
-                      <div class="product-box border">
-                        <img src="assets/images/products/09.png" alt="product img">
-                      </div>
-                      <div class="flex-grow-1">
-                        <div class="progress-wrapper">
-                          <p class="my-2">iPhone 11 - A24512 <span class="float-end">(4,216 Orders) <span class="ms-3 fw-bold">42%</span></span></p>
-                          <div class="progress" style="height: 4px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   <hr>
-                  <div class="d-flex align-items-start gap-3">
-                      <div class="product-box border">
-                        <img src="assets/images/products/02.png" alt="product img">
-                      </div>
-                      <div class="flex-grow-1">
-                        <div class="progress-wrapper">
-                          <p class="my-2">iPhone 11 - A24512 <span class="float-end">(4,216 Orders) <span class="ms-3 fw-bold">42%</span></span></p>
-                          <div class="progress" style="height: 4px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   <hr>
-                   <div class="d-flex align-items-start gap-3">
-                    <div class="product-box border">
-                      <img src="assets/images/products/04.png" alt="product img">
-                    </div>
-                    <div class="flex-grow-1">
-                      <div class="progress-wrapper">
-                        <p class="my-2">iPhone 11 - A24512 <span class="float-end">(4,216 Orders) <span class="ms-3 fw-bold">42%</span></span></p>
-                        <div class="progress" style="height: 4px;">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   </div>
-               </div>
-            </div>
-          </div>
-
-        </div>end row -->
-
-        <!-- <div class="row row-cols-1 row-cols-lg-3">
-          <div class="col">
-            <div class="card rounded-4">
-              <div class="card-body">
-                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <div class="">
-                    <h4 class="mb-0">24.5K</h4>
-                    <p class="mb-0">Facebook Followers</p>
-                 </div>
-                 <div class="fs-2 text-facebook">
-                  <i class="bi bi-facebook"></i>
-                </div>
-                 </div>
-                 <div id="chart7"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card rounded-4">
-              <div class="card-body">
-                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <div class="">
-                    <h4 class="mb-0">37.8K</h4>
-                    <p class="mb-0">Twitter Followers</p>
-                 </div>
-                 <div class="fs-2 text-twitter">
-                  <i class="bi bi-twitter"></i>
-                </div>
-                 </div>
-                 <div id="chart8"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card rounded-4">
-              <div class="card-body">
-                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <div class="">
-                    <h4 class="mb-0">56.9K</h4>
-                    <p class="mb-0">Youtube Subscribers</p>
-                 </div>
-                 <div class="fs-2 text-youtube">
-                  <i class="bi bi-youtube"></i>
-                </div>
-                 </div>
-                 <div id="chart9"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>end row -->
-
-
-        <!-- <div class="row">
-          <div class="col-12 col-lg-6 col-xl-6 d-flex">
-            <div class="card rounded-4 w-100">
-              <div class="card-header bg-transparent">
-                <div class="d-flex align-items-center">
-                  <h6 class="mb-0">Customer Reviews</h6>
-                  <div class="fs-5 ms-auto dropdown">
-                     <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                       <ul class="dropdown-menu">
-                         <li><a class="dropdown-item" href="#">Action</a></li>
-                         <li><a class="dropdown-item" href="#">Another action</a></li>
-                         <li><hr class="dropdown-divider"></li>
-                         <li><a class="dropdown-item" href="#">Something else here</a></li>
-                       </ul>
-                   </div>
-                 </div>
-              </div>
-               <div class="card-body">
-                 <div class="review-list">
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-1.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">James Caviness</h6>
-                        <p class="mb-0 ms-auto">February 16, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-2.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">David Buckley</h6>
-                        <p class="mb-0 ms-auto">February 22, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-3.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">Peter Costanzo</h6>
-                        <p class="mb-0 ms-auto">February 26, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-4.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">Peter Costanzo</h6>
-                        <p class="mb-0 ms-auto">February 26, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-5.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">Peter Costanzo</h6>
-                        <p class="mb-0 ms-auto">February 26, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-6.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">Peter Costanzo</h6>
-                        <p class="mb-0 ms-auto">February 26, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex align-items-start">
-                    <div class="review-user">
-                      <img src="assets/images/avatars/avatar-7.png" width="65" height="65" class="rounded-circle" alt="">
-                    </div>
-                    <div class="review-content ms-3">
-                      <div class="rates cursor-pointer fs-6">
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                        <i class="bx bxs-star text-warning"></i>
-                      </div>
-                      <div class="d-flex align-items-center mb-2">
-                        <h6 class="mb-0">Peter Costanzo</h6>
-                        <p class="mb-0 ms-auto">February 26, 2021</p>
-                      </div>
-                      <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    </div>
-                  </div>
-
-                </div>
-
-               </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6 col-xl-6 d-flex">
-            <div class="card rounded-4 w-100">
-              <div class="card-header bg-transparent">
-                <div class="d-flex align-items-center">
-                  <h6 class="mb-0">Chat Box</h6>
-                  <div class="fs-5 ms-auto dropdown">
-                     <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
-                       <ul class="dropdown-menu">
-                         <li><a class="dropdown-item" href="#">Action</a></li>
-                         <li><a class="dropdown-item" href="#">Another action</a></li>
-                         <li><hr class="dropdown-divider"></li>
-                         <li><a class="dropdown-item" href="#">Something else here</a></li>
-                       </ul>
-                   </div>
-                 </div>
-              </div>
-               <div class="card-body p-0">
-                  <div class="chat-talk d-flex flex-column gap-4 p-3">
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3">
-                         Hello , Codervent
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3 bg-light">
-                         Hello , Codervent
-                      </div>
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3">
-                         Hello , Codervent
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3 bg-light">
-                         Hello , Codervent
-                      </div>
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3">
-                         Hello , Codervent
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3 bg-light">
-                         Hello , Codervent
-                      </div>
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3">
-                         Hello , Codervent
-                      </div>
-                     </div>
-                     <div class="d-flex align-items-end gap-3">
-                      <div class="chat-msg border flex-grow-1 rounded-4 p-3 bg-light">
-                         Hello , Codervent
-                      </div>
-                      <div class="chat-user">
-                        <img src="assets/images/avatars/avatar-7.png" width="55" height="55" class="rounded-circle" alt="">
-                      </div>
-                     </div>
-                  </div>
-                  <div class="card-footer bg-transparent">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Type your message">
-                      <button class="btn btn-primary" type="button"><i class="bi bi-send"></i></button>
-                    </div>
-                  </div>
-
-               </div>
-            </div>
-          </div>
-
-        </div>end row -->
 
 
           </main>
@@ -1135,7 +404,7 @@ foreach (glob('../assets/images/frames/*') as $filename) {
   <!--app-->
   <script src="../assets/js/app.js"></script>
   <script src="../assets/js/index.js"></script>
-  <script src="../assets/js/bundle.js"></script>
+  <!-- <script src="../assets/js/bundle.js"></script> -->
   <script>
     // new PerfectScrollbar(".review-list")
     // new PerfectScrollbar(".chat-talk")

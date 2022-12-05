@@ -94,7 +94,7 @@
                   "object:rotating": s,
                 }),
                 e.setOverlayImage(
-                  "./img/frames/" + idAnh,
+                  "./assets/images/frames/" + idAnh,
                   function () {
                     e.overlayImage.scaleToWidth(e.getWidth()), e.renderAll();
                   },
@@ -149,7 +149,7 @@
               document
                 .getElementById("frame-1")
                 .addEventListener("click", function () {
-                  a(e, "./img/frames/frame-1.png");
+                  //a(e, "./img/frames/frame-1.png");
                 }),
               /*
               document

@@ -1,0 +1,14 @@
+/* duy */
+.preview-img {
+  width: 300px;
+  margin: 50px 0;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.img-choice {
+  width: 300px !important;
+  height: 300px !important;
+  margin: 50px auto;
+  object-fit: cover;
+}
