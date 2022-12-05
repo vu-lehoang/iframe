@@ -93,7 +93,7 @@
                       <div class="mt-4 grid grid-cols-3 gap-4">
 
 
-                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./img/frames/<?= ($out[$index]) ? $out[$index]   : $out[0];  ?>" alt="">
+                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./assets/images/frames/<?= ($out[$index]) ? $out[$index]   : $out[0];  ?>" alt="">
                         <!-- 
                         <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/preview-2.png" alt="">
                         <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-1.png" alt="" style="display: none !important;">

@@ -179,7 +179,7 @@ error_reporting(0);
                       <div class="card-body">
                         <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Chọn khung ảnh mới:</h1>
                         <div class="image-preview" align="center">
-                          <img src="../assets/images/upload.png" alt="" id="img">
+                          <img src="../assets/images/upload.png" class="preview-img" alt="" id="img">
                           <input type="hidden" name="fileAbc" class="input-file">
                           <input type="file" name="choosefile" value="" id="choosefile" style="display:none" />
                           <div style="margin-top: 10px"></div>
@@ -195,7 +195,7 @@ error_reporting(0);
                     <div class="card rounder-4 w-100">
                       <div class="card-body">
                         <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Khung ảnh đang dùng:</h1>
-                        <img src="../assets/images/frames/<?php $index = count($out_folder) - 1;;
+                        <img class="img-choice" src="../assets/images/frames/<?php $index = count($out_folder) - 1;;
                                                           echo ($out_folder[$index]) ? $out_folder[$index] : $out[0] ?>" alt="">
                       </div>
                     </div>
@@ -215,22 +215,21 @@ error_reporting(0);
             <div class="col col-img">
               <div class="card">
                 <img src="../assets/images/frames/<?= $item ?>" name="img_abas" name_src="<?= $item ?>" class="image_abc card-img-top" alt="" >
-
                 <form action="" method="POST">
                   <input type="hidden" name="hiddenInput" value="<?= $item ?>">
                   <button type="submit" name="uploadfileImg" class="btn btn-outline-success px-3 radius-30 btn-hover">Áp dụng</button>
                 </form>
-                <button type="button" class="btn btn-close btn-close--update"  data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
-                      <!-- Modal -->
-                      <form action="" method="post">
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
+                <button type="button" class="btn-close btn-close--update"  data-bs-toggle="modal" data-bs-target="#exampleModal-<?=$key?>"></button>
+                <!-- Modal -->
+                <form action="" method="post">
+                  <div class="modal fade" id="exampleModal-<?=$key?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
                               Bạn muốn xóa khung ảnh này không? 
                             </div>
                             <div class="modal-footer">
@@ -241,7 +240,6 @@ error_reporting(0);
                           </div>
                         </div>
                       </div>
-                    </div>
                     </form>
               </div>
             </div>

@@ -1,20 +1,20 @@
 .preview-img {
-    width: 300px;
-    margin: 50px 0;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  
-  .img-choice {
-    width: 300px !important;
-    height: 300px !important;
-    margin: 50px auto;
-    object-fit: cover;
-  }
-  .btn-close--update {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+  width: 300px;
+  margin: 50px 0;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.img-choice {
+  width: 300px !important;
+  height: 300px !important;
+  margin: 50px auto;
+  object-fit: cover;
+}
+.btn-close--update {
+  position: absolute;
+  top: 5px;
+  right: 5px;
   width: unset;
   height: unset;
   padding: 15px;
@@ -22,38 +22,36 @@
   background: rgba(211, 211, 211, 0.753)
     url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e")
     center/1em auto no-repeat;
-    opacity: .3;
-  }
-  .btn-hover{
-    display: none;
-    transition: all .25s linear;
-  }
-  .col.col-img{
-    transition: all .25s linear;
+  opacity: 0.3;
 }
-.col.col-img:hover{
-
-    transition: all .25s linear;
+.btn-hover {
+  display: none;
+  transition: all 0.25s linear;
 }
-.col.col-img:hover .btn-hover{
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,0);
-    /* opacity: 1;
+.col.col-img {
+  transition: all 0.25s linear;
+}
+.col.col-img:hover {
+  transition: all 0.25s linear;
+}
+.col.col-img:hover .btn-hover {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* opacity: 1;
     visibility: visible;
     transition: all 0.3s linear; */
+}
+.btn-close--update {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
+}
 
-  }
-  .btn-close--update{
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s linear;
-  }
-  
 .col.col-img:hover .btn-close--update {
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.3s linear;
-  }
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s linear;
+}
