@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="./assets/js/bundle.js"></script>
 
   <title>Công cụ tạo khung cho ảnh avatar</title>
   <meta name="description" content="Một công cụ đơn giản để tạo ảnh hồ sơ được đóng khung cho phương tiện truyền thông xã hội nhằm hỗ trợ một mục tiêu. Tự động tạo một trang web tĩnh dựa trên số lượng hình ảnh khung được cung cấp.">
-  <link rel="icon" href="img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Công cụ tạo khung avatar - JCI Khánh Hoà" />
@@ -94,7 +93,7 @@
                       <div class="mt-4 grid grid-cols-3 gap-4">
 
 
-                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./img/frames/<?= ($out[$index]) ? $out[$index]   : $out[0];  ?>" alt="">
+                        <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="./assets/images/frames/<?= ($out[$index]) ? $out[$index]   : $out[0];  ?>" alt="">
                         <!-- 
                         <img id="frame-2" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/preview-2.png" alt="">
                         <img id="frame-1" class="object-contain w-full max-w-6 rounded-full border-2 border-gray-100 inline-block shadow-xl transition duration-300 ease-in-out cursor-pointer hover:border-primary" src="img/previews/frame-1.png" alt="" style="display: none !important;">
