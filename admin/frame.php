@@ -217,10 +217,32 @@ error_reporting(0);
                 <img src="../assets/images/frames/<?= $item ?>" name="img_abas" name_src="<?= $item ?>" class="image_abc card-img-top" alt="" >
 
                 <form action="" method="POST">
-                  <button type="submit" name="btn-xoa" class="btn-close" label="Close"></button>
                   <input type="hidden" name="hiddenInput" value="<?= $item ?>">
                   <button type="submit" name="uploadfileImg" class="btn btn-outline-success px-3 radius-30 btn-hover">Áp dụng</button>
                 </form>
+                <button type="button" class="btn btn-close btn-close--update"  data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                      <!-- Modal -->
+                      <form action="" method="post">
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Bạn muốn xóa khung ảnh này không? 
+                            </div>
+                            <div class="modal-footer">
+                            <input type="hidden" name="hiddenInput" value="<?= $item ?>">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                              <button type="submit" class="btn btn-primary" name="btn-xoa">Xóa</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </form>
               </div>
             </div>
           <?php endforeach ?>
