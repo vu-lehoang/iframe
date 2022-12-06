@@ -2,6 +2,22 @@
 include '../layout/header.php';
 error_reporting(0);
 ?>
+<style>
+  @media screen and (max-width:1000px) {
+    .scroll-mb {
+      display: flex;
+      overflow: scroll;
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media screen and (max-width:1000px) {
+    .preview-img {
+      width: 200px;
+      margin: 15px 0;
+    }
+  }
+</style>
 
 <body>
   <!--start wrapper-->
@@ -35,7 +51,7 @@ error_reporting(0);
                 <li>
                   <hr class="dropdown-divider">
                   </hr>
-                  
+
                 <li>
                   <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
                     <div class="d-flex align-items-center">
@@ -59,18 +75,14 @@ error_reporting(0);
       // resetIndex('hiddenInput', "../assets/images/frames/");
       $selectImg = $_POST['hiddenInput'];
       $time = time();
-      $cat =  explode("-", $selectImg);
-      $arrName = '';
-      if (count($cat) > 2) {
-        for ($i = 1; $i < count($cat); $i++) {
-          $arrName .= $cat[$i];
-        }
-      }
-      $newName = $time . "-" . $arrName;
+      $time_length = strlen($time) + 1;
+      $cat = substr($selectImg, $time_length);
+      $newName = $time . "-" . $cat;
       $old = "../assets/images/frames/" . $selectImg;
       $new = "../assets/images/frames/" . $newName;
       rename($old, $new);
     }
+
     function resetIndex($value = '', $link = '../assets/images/frames/')
     {
       $selectImg = $_POST[$value];
@@ -183,8 +195,8 @@ error_reporting(0);
                           <input type="hidden" name="fileAbc" class="input-file">
                           <input type="file" name="choosefile" value="" id="choosefile" style="display:none" />
                           <div style="margin-top: 10px"></div>
-                          <label for="choosefile" class="btn btn-outline-primary px-5 radius-30" style="margin-right: 15px">Chọn ảnh</label>
-                          <button type="submit" name="uploadfile" class="btn btn-outline-success px-5 radius-30">
+                          <label for="choosefile" class="btn btn-outline-primary px-5 radius-30 mb-2" style="margin-right: 5px">Chọn ảnh</label>
+                          <button type="submit" name="uploadfile" class="btn btn-outline-success px-5 radius-30 mb-2" style="margin-right: 5px">
                             Lưu ảnh
                           </button>
                         </div>
@@ -196,7 +208,7 @@ error_reporting(0);
                       <div class="card-body">
                         <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Khung ảnh đang dùng:</h1>
                         <img class="img-choice" src="../assets/images/frames/<?php $index = count($out_folder) - 1;;
-                                                          echo ($out_folder[$index]) ? $out_folder[$index] : $out[0] ?>" alt="">
+                                                                              echo ($out_folder[$index]) ? $out_folder[$index] : $out[0] ?>" alt="">
                       </div>
                     </div>
               </form>
@@ -209,20 +221,20 @@ error_reporting(0);
   <div class="row">
     <div class="card rounded-4">
       <div class="card-body">
-      <h1 class="large fs-6 my-2 primary mb-3 " style="font-weight: bold">Khung ảnh có sẵn:</h1>
-      <div class="row row-cols-1 row-cols-lg-5 g-lg-5">
+        <h1 class="large fs-6 my-2 primary mb-3 " style="font-weight: bold">Khung ảnh có sẵn:</h1>
+        <div class="row row-cols-2 row-cols-lg-5 g-lg-5 scroll-mb">
           <?php foreach ($out_folder as $key => $item) : ?>
             <div class="col col-img">
               <div class="card">
-                <img src="../assets/images/frames/<?= $item ?>" name="img_abas" name_src="<?= $item ?>" class="image_abc card-img-top" alt="" >
+                <img src="../assets/images/frames/<?= $item ?>" name="img_abas" name_src="<?= $item ?>" class="image_abc card-img-top" alt="">
                 <form action="" method="POST">
                   <input type="hidden" name="hiddenInput" value="<?= $item ?>">
                   <button type="submit" name="uploadfileImg" class="btn btn-outline-success px-3 radius-30 btn-hover">Áp dụng</button>
                 </form>
-                <button type="button" class="btn-close btn-close--update"  data-bs-toggle="modal" data-bs-target="#exampleModal-<?=$key?>"></button>
+                <button type="button" class="btn-close btn-close--update" data-bs-toggle="modal" data-bs-target="#exampleModal-<?= $key ?>"></button>
                 <!-- Modal -->
                 <form action="" method="post">
-                  <div class="modal fade" id="exampleModal-<?=$key?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="exampleModal-<?= $key ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -230,17 +242,17 @@ error_reporting(0);
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                              Bạn muốn xóa khung ảnh này không? 
-                            </div>
-                            <div class="modal-footer">
-                            <input type="hidden" name="hiddenInput" value="<?= $item ?>">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                              <button type="submit" class="btn btn-primary" name="btn-xoa">Xóa</button>
-                            </div>
-                          </div>
+                          Bạn muốn xóa khung ảnh này không?
+                        </div>
+                        <div class="modal-footer">
+                          <input type="hidden" name="hiddenInput" value="<?= $item ?>">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                          <button type="submit" class="btn btn-primary" name="btn-xoa">Xóa</button>
                         </div>
                       </div>
-                    </form>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           <?php endforeach ?>
@@ -346,29 +358,4 @@ error_reporting(0);
 
 
 </div>
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
-<!--plugins-->
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/plugins/simplebar/js/simplebar.min.js"></script>
-<script src="../assets/plugins/metismenu/js/metisMenu.min.js"></script>
-<script src="../assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-<script src="../assets/js/pace.min.js"></script>
-<script src="../assets/plugins/chartjs/js/Chart.min.js"></script>
-<script src="../assets/plugins/chartjs/js/Chart.extension.js"></script>
-<script src="../assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
-<!-- Vector map JavaScript -->
-<script src="../assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-<script src="../assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!--app-->
-<script src="../assets/js/app.js"></script>
-<script src="../assets/js/index.js"></script>
-<script src="../assets/js/bundle.js"></script>
-<script>
-  // new PerfectScrollbar(".review-list")
-  // new PerfectScrollbar(".chat-talk")
-</script>
-
-
-</body>
-
-</html>
+<?php include('../layout/footer.php') ?>

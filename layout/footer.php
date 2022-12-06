@@ -14,8 +14,8 @@
 <script src="../assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!--app-->
 <script src="../assets/js/app.js"></script>
-<script src="../assets/js/index.js"></script>
-<script src="../assets/js/bundle.js"></script>
+<!-- <script src="../assets/js/index.js"></script>
+<script src="../assets/js/bundle.js"></script> -->
 <script>
     // new PerfectScrollbar(".review-list")
     // new PerfectScrollbar(".chat-talk")
