@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
                 $_SESSION['sigin-succes'] = 'login thành công';
                 echo $_SESSION['sigin-succes'];
-                header('location: ' . ROOT_URL_ADMIN . 'index.php');
+                header('location: ' . ROOT_URL_ADMIN . 'frame.php');
             } else {
                 $_SESSION['signin'] = "Please check your input";
             }
