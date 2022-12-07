@@ -9,6 +9,8 @@
 <script src="../assets/plugins/chartjs/js/Chart.min.js"></script>
 <script src="../assets/plugins/chartjs/js/Chart.extension.js"></script>
 <script src="../assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+<script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/pace.min.js"></script>
 <!-- Vector map JavaScript -->
 <script src="../assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="../assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
