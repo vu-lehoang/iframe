@@ -148,10 +148,10 @@ error_reporting(0);
             // header('location: ../index.php');
 
           } else {
-            $err = '';
+            $err = 'Kích thước không hợp lệ';
           }
         } else {
-          $err = '';
+          $err = 'Vui lòng chọn đúng định dạng ảnh';
         }
       }
       // check exits img in folder
