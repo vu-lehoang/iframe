@@ -165,10 +165,10 @@ function format_Number($number)
 ?>
 
 <body>
-    <div class="bg-surface">
+    <div class="bg-white">
     <?php include("./modules/view/header.php")?>
     <section class="wrapper py-5">
-        <div class="container py-2">
+        <div class="container py-2 px-3 border radius-10 bg-surface">
             <h2 class="title">Công cụ tính thuế VAT</h2>
             <form action="" method="POST" id="form">
                 <label class="mb-2">Nhập số tiền (đ): </label>
@@ -193,7 +193,7 @@ function format_Number($number)
                         <p> Số tiền chưa thuế: <?= ($money != '') ? format_Number(round($money))  : null ?></p>
                         <p> Số tiền thuế: <?= ($vat_money != "") ? format_Number(round($vat_money)) : null ?></p>
                         <p> Số tiền sau thuế: <?= ($result_money != "") ? format_Number(round($result_money)) : null ?></p>
-                        <span> Bằng chữ:
+                        <span> Số tiền sau thuế bằng chữ:
                             <p class="noti-money"><?= convert_number_to_words(round($result_money)) . ' đồng'; ?></p>
                         </span>
                     </div>
