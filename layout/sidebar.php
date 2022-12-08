@@ -2,7 +2,7 @@
 <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="../assets/images/logo.png" class="logo-icon" alt="logo icon">
+            <img src="../assets/images/logo_favicon.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">MDSCO</h4>

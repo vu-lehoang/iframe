@@ -1,4 +1,4 @@
-const menuItem = document.querySelectorAll(".menu-hover");
+var menuItem = document.querySelectorAll(".menu-hover");
 if (menuItem) {
   menuItem.forEach((item) => {
     let pathName = item.children[0].getAttribute("name_src");
