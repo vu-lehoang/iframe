@@ -1,6 +1,6 @@
 <?php
-define('ROOT_URL', 'http://iframe.test:8080/');
-define('ROOT_URL_ADMIN', 'http://iframe.test:8080/admin/');
+define('ROOT_URL', 'http://iframe.test/');
+define('ROOT_URL_ADMIN', 'http://iframe.test/admin/');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');

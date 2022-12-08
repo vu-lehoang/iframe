@@ -1,5 +1,13 @@
 <?php
+
 include '../admin/layout/header.php';
+error_reporting(0);
+session_start();
+require 'config/database.php';
+$username_email = $_SESSION['signin-data']['username_email'] ?? null;
+$password = $_SESSION['signin-data']['password'] ?? null;
+unset($_SESSION['signin-data']);
+
 ?>
 <style>
   @media screen and (max-width:1000px) {
@@ -17,57 +25,25 @@ include '../admin/layout/header.php';
     }
   }
 </style>
-
+<title>Cấu hình</title>
+</head>
 <body>
-  <!--start wrapper-->
-  <div class="wrapper">
-    <!--start top header-->
-    <header class="top-header">
-      <nav class="navbar navbar-expand gap-3 align-items-center">
-        <div class="mobile-toggle-icon fs-3">
-          <i class="bi bi-list"></i>
-        </div>
-        <div class="top-navbar-right ms-auto">
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item dropdown dropdown-user-setting">
-              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
-                <div class="user-setting d-flex align-items-center">
-                  <img src="../assets/images/logo.png" class="user-img" alt="">
-                </div>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div class="d-flex align-items-center">
-                      <img src="../assets/images/logo.png" alt="" class="rounded-circle" width="54" height="54">
-                      <div class="ms-3">
-                        <h6 class="mb-0 dropdown-user-name">Minh Duy Solutions</h6>
-                        <small class="mb-0 dropdown-user-designation text-secondary">Admin</small>
+
+  <?php
+
+  include '../layout/sidebar.php';
+  if (isset($_SESSION['sigin-succes'])) {
+    ?>
+    <div class="ms-3">
+                        <div class="text-success">
+                        <?= $_SESSION['sigin-succes'];
+                        unset($_SESSION['ssigin-succes']);
+                        ?>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                  </hr>
-
-                <li>
-                  <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
-                    <div class="d-flex align-items-center">
-                      <div class=""><i class="bi bi-lock-fill"></i></div>
-                      <div class="ms-3"><span>Logout</span></div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!--end top header-->
-
-    <!--start sidebar -->
+  <?php
+  };
+  ?>
     <?php
 
     if (isset($_POST['uploadfileImg'])) {
@@ -92,9 +68,18 @@ include '../admin/layout/header.php';
       $new = $link . $newName;
       rename($old, $new);
     };
-    ?>
-    <?php
-    include '../layout/sidebar.php';
+          // check exits img in folder
+      function checkFolder($link, $str)
+      {
+        $out = array();
+        foreach (glob($link) as $filename) {
+          $p = pathinfo($filename);
+          $cat = explode('-', $p['basename']);
+          if ($cat[1] == $str)
+            return 0;
+        }
+        return 1;
+      }
     ?>
     <!--end sidebar -->
 
@@ -152,18 +137,7 @@ include '../admin/layout/header.php';
           $err = 'Vui lòng chọn đúng định dạng ảnh';
         }
       }
-      // check exits img in folder
-      function checkFolder($link, $str)
-      {
-        $out = array();
-        foreach (glob($link) as $filename) {
-          $p = pathinfo($filename);
-          $cat = explode('-', $p['basename']);
-          if ($cat[1] == $str)
-            return 0;
-        }
-        return 1;
-      }
+
 
       // get file in folder
       $out_folder = array();
@@ -189,7 +163,7 @@ include '../admin/layout/header.php';
                       <div class="card-body">
                         <h1 class="large fs-6 my-2 primary" style="font-weight: bold">Chọn khung ảnh mới:</h1>
                         <div class="image-preview" align="center">
-                          <img src="../assets/images/upload.png" class="preview-img" alt="" id="img">
+                          <img src="../assets/images/upload.png" class="preview-img" alt="" id="img" >
                           <input type="hidden" name="fileAbc" class="input-file">
                           <input type="file" name="choosefile" value="" id="choosefile" style="display:none" accept="image/png, image/gif, image/jpeg" />
                           <div style="margin-top: 10px"></div>

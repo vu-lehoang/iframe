@@ -7,9 +7,9 @@ if (isset($_POST['submit'])) {
     $username_email = filter_var($_POST['username_email'], FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
     if (!$username_email) {
-        $_SESSION['signin'] = "Username or Email required";
+        $_SESSION['signin'] = "Vui lòng nhập thông tin";
     } elseif (!$password) {
-        $_SESSION['signin'] = "Password required";
+        $_SESSION['signin'] = "Vui lòng nhập mật khẩu";
     } else {
         // fecth user from database
         $fetch_user_query = "SELECT * FROM users WHERE user_name = '$username_email' OR email ='$username_email' ";
@@ -25,10 +25,10 @@ if (isset($_POST['submit'])) {
                 $_SESSION['sigin-succes'] = 'login thành công';
                 header('location: ' . ROOT_URL_ADMIN . 'manage-tool/frame.php');
             } else {
-                $_SESSION['signin'] = "Please check your input";
+                $_SESSION['signin'] = "Sai mật khẩu, vui lòng nhập lại!";
             }
         } else {
-            $_SESSION['signin'] = "User not found";
+            $_SESSION['signin'] = "Người dùng không tồn tại";
         }
     }
 
