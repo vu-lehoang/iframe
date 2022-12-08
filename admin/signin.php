@@ -40,10 +40,10 @@ include("../layout/header.php");
                 <div class="mt-4">
                     <div class="card rounded-0 overflow-hidden shadow-none border mb-5 mb-lg-0">
                         <div class="row g-0">
-                            <div class="col-12 order-1 col-xl-8 d-flex align-items-center justify-content-center border-end">
+                            <div class="col-12 order-1 col-xl-6 d-flex align-items-center justify-content-center border-end">
                                 <img src="../assets/images/error/auth-img-7.png" class="img-fluid" alt="">
                             </div>
-                            <div class="col-12 col-xl-4 order-xl-2">
+                            <div class="col-12 col-xl-6 order-xl-2">
                                 <div class="card-body p-4 p-sm-5">
                                     <?php if (isset($_SESSION['signup-success'])) : ?>
                                         <div class="alert border-0 bg-light-success alert-dismissible fade show py-2">
@@ -74,23 +74,23 @@ include("../layout/header.php");
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     <?php endif ?>
-                                    <h5 class="card-title">Đăng nhập</h5>
+                                    <h1 class="card-title" style="font-weight: bold">Đăng nhập</h1>
                                     <form action="<?= ROOT_URL_ADMIN ?>handle/signin-logic.php" method="POST" class="form-body">
                                         <div class="row g-3">
                                             <div class="col-12">
                                                 <label for="inputEmailAddress" class="form-label">Địa chỉ email hoặc tên người dùng</label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="text" name="username_email" value="<?= $username_email ?>" placeholder="Username or Email" class="form-control radius-30" id="inputEmailAddress">
+                                                    <input type="text" name="username_email" value="<?= $username_email ?>" placeholder="Tên người dùng hoặc địa chỉ email" class="form-control radius-30" id="inputEmailAddress">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputChoosePassword" class="form-label">Mật khẩu</label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="password" name="password" value="<?= $password ?>" placeholder="Password" class="form-control radius-30" id="inputChoosePassword">
+                                                    <input type="password" name="password" value="<?= $password ?>" placeholder="Mật khẩu" class="form-control radius-30" id="inputChoosePassword">
                                                 </div>
                                             </div>
 
-                                            <div class="col-6 text-end"> <a href="authentication-forgot-password.html">Quên mật khẩu?</a>
+                                            <div class="col-12 text-start"> <a href="../admin/forgotpass.php">Quên mật khẩu?</a>
                                             </div>
                                             <div class="col-12">
                                                 <div class="d-grid">
@@ -99,7 +99,7 @@ include("../layout/header.php");
                                             </div>
 
                                             <div class="col-12 text-center">
-                                                <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL ?>signup.php">Đăng ký tại đây</a></p>
+                                                <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL_ADMIN ?>signup.php">Đăng ký tại đây</a></p>
                                             </div>
                                         </div>
                                     </form>

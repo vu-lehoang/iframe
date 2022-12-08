@@ -1,4 +1,6 @@
 <?php
+require './config/constant.php';
+
 include '../layout/header.php';
 error_reporting(0);
 session_start();
@@ -8,22 +10,22 @@ $password = $_SESSION['signin-data']['password'] ?? null;
 unset($_SESSION['signin-data']);
 ?>
 
-<body>
+<body >
   <?php if ($_SESSION['sigin-succes']) : header("Location:../admin/frame.php") ?>
     <!--start wrapper-->
   <?php else : ?>
     <div class="wrapper">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-0 border-bottom">
+        <header >
+            <nav class="navbar navbar-expand-lg navbar-light rounded-0 border-bottom" style="background-color: #1a2232">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo-mdsco.png" width="140" alt="" /></a>
+                    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo-white.png" width="140" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon" style="filter: contrast(0);"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex: 0 0 auto ">
                         <div class="d-flex ms-3 gap-3">
                             <a href="../admin/index.php" class="btn btn-primary btn-sm px-4 radius-30">Đăng nhập</a>
-                            <a href="../admin/signup.php" class="btn btn-white btn-sm px-4 radius-30">Đăng ký</a>
+                            <a href="../admin/signup.php" class="btn btn-sm px-4 radius-30" style="background: white; color: #1a2232 !important">Đăng ký</a>
                         </div>
                     </div>
                 </div>
@@ -36,10 +38,10 @@ unset($_SESSION['signin-data']);
         <div class="mt-4">
           <div class="card rounded-0 overflow-hidden shadow-none border mb-5 mb-lg-0">
             <div class="row g-0">
-              <div class="col-12 order-1 col-xl-8 d-flex align-items-center justify-content-center border-end">
+              <div class="col-12 order-1 col-xl-6 d-flex align-items-center justify-content-center border-end">
                 <img src="../assets/images/error/auth-img-7.png" class="img-fluid" alt="">
               </div>
-              <div class="col-12 col-xl-4 order-xl-2">
+              <div class="col-12 col-xl-6 order-xl-2">
                 <div class="card-body p-4 p-sm-5">
                   <?php if (isset($_SESSION['signup-success'])) : ?>
                     <div class="alert border-0 bg-light-success alert-dismissible fade show py-2">
@@ -76,17 +78,17 @@ unset($_SESSION['signin-data']);
                       <div class="col-12">
                         <label for="inputEmailAddress" class="form-label">Địa chỉ email hoặc tên người dùng</label>
                         <div class="ms-auto position-relative">
-                          <input type="text" name="username_email" value="<?= $username_email ?>" placeholder="Username or Email" class="form-control radius-30" id="inputEmailAddress">
+                          <input type="text" name="username_email" value="<?= $username_email ?>" placeholder="Tên người dùng hoặc địa chỉ email" class="form-control radius-30" id="inputEmailAddress">
                         </div>
                       </div>
                       <div class="col-12">
                         <label for="inputChoosePassword" class="form-label">Mật khẩu</label>
                         <div class="ms-auto position-relative">
-                          <input type="password" name="password" value="<?= $password ?>" placeholder="Password" class="form-control radius-30" id="inputChoosePassword">
+                          <input type="password" name="password" value="<?= $password ?>" placeholder="Mật khẩu" class="form-control radius-30" id="inputChoosePassword">
                         </div>
                       </div>
 
-                      <div class="col-6 text-end"> <a href="authentication-forgot-password.html">Quên mật khẩu?</a>
+                      <div class="col-12 text-start"> <a href="../admin/forgotpass.php">Quên mật khẩu?</a>
                       </div>
                       <div class="col-12">
                         <div class="d-grid">
@@ -95,7 +97,7 @@ unset($_SESSION['signin-data']);
                       </div>
 
                       <div class="col-12 text-center">
-                        <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL ?>signup.php">Đăng ký tại đây</a></p>
+                        <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL_ADMIN ?>signup.php">Đăng ký tại đây</a></p>
                       </div>
                     </div>
                   </form>
@@ -109,8 +111,8 @@ unset($_SESSION['signin-data']);
 
         <!--end page main-->
 
-        <footer class="bg-white border-top p-3 text-center fixed-bottom">
-            <p class="mb-0">© Minh Duy Solutions 2022. All right reserved.</p>
+        <footer class="border-top p-3 text-center fixed-bottom" style="background-color: #1a2232">
+            <p class="mb-0 text-white">© Minh Duy Solutions 2022. All right reserved.</p>
         </footer>
 
     </div>

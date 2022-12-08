@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="mt-12 border-t border-gray-200 py-4 bg-dark">
+    <div class="mt-12 border-t border-gray-200 py-4" style="background-color: #1a2232">
       <p class="text-base leading-6 text-gray-400 text-center text-white">
         &copy; 2022 Minh Duy Solutions. All rights reserved.
       </p>

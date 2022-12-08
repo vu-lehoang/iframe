@@ -1,7 +1,19 @@
 <?php
+session_start();
+
+
+// require './config/constant.php';
+$Logger = false;
+if(isset($_SESSION['sigin-succes'])){
+  $Logger = true;
+}
+
+if (!$Logger) {
+  header("Location: ../admin/index.php");
+}
+session_write_close();
 include '../layout/header.php';
 error_reporting(0);
-session_start();
 require 'config/database.php';
 $username_email = $_SESSION['signin-data']['username_email'] ?? null;
 $password = $_SESSION['signin-data']['password'] ?? null;
@@ -27,7 +39,24 @@ unset($_SESSION['signin-data']);
 </head>
 <body>
 
-  <?php
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Bạn có muốn đăng xuất hay không?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary"><a href="../admin/logout.php" style="color: white">Đăng xuất</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php
 
   include '../layout/sidebar.php';
   if (isset($_SESSION['sigin-succes'])) {
@@ -54,6 +83,9 @@ unset($_SESSION['signin-data']);
       $old = "../assets/images/frames/" . $selectImg;
       $new = "../assets/images/frames/" . $newName;
       rename($old, $new);
+      // session_start();
+      // $_SESSION["noti"]="Thay đổi ảnh thành công";
+      // session_write_close();
     }
 
     function resetIndex($value = '', $link = '../assets/images/frames/')
@@ -153,6 +185,27 @@ unset($_SESSION['signin-data']);
           <!-- Thông báo lỗi -->
           <h1><?php echo ($err != '') ? $err : null ?></h1>
           <!-- end thong báo lỗi -->
+            <!-- <?php
+                            session_start();
+                            $noti=$_SESSION["noti"];
+                            $notiText = " <div class='alert border-0 bg-light-success alert-dismissible fade show py-2'>
+                            <div class='d-flex align-items-center'>
+                              <div class='fs-3 text-success'><i class='bi bi-check-circle-fill'></i>
+                              </div>
+                              <div class='ms-3'>
+                                <div class='text-success'>".$noti."</div>
+                              </div>
+                            </div>
+                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                            </div>";
+                            if (isset($noti))
+                            {
+                              unset($noti);
+                              echo $notiText;
+                              unset($notiText);
+                          }
+                          session_write_close();
+                        ?> -->
           <div class="card rounded-4">
             <div class="card-body">
               <form method="POST" action="" enctype="multipart/form-data">

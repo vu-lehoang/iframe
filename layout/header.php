@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+  <link rel="icon" type="image/x-icon" href="../assets/images/logo_favicon.png">
   <!--plugins-->
   <link href="../assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
   <link href="../assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />

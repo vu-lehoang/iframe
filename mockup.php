@@ -21,7 +21,7 @@
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/js/mockup/boostrap/boostrap.css">
+    <!-- <link rel="stylesheet" href="./assets/js/mockup/boostrap/boostrap.css"> -->
     <link rel="stylesheet" href="./assets/css/mockup/style.css">
     <link rel="stylesheet" href="./assets/css/mockup/animate.css">
     <link rel="stylesheet" href="./assets/css/mockup/font-awesome.css">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-md-8 website-input">
 
-                        <form class="form-inline justify-content-center" method="get">
+                        <form class="form-inline justify-content-center flex" method="get">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="url" class="form-control" name="url" id="url" placeholder="https://www.example.com"
@@ -203,15 +203,15 @@
             <div class="container">
                 <div class="description">
 
-                    <h2 class="text-center">Công cụ tạo mockup đa thiết bị là gì?</h2>
+                    <h2 class="text-center h2">Công cụ tạo mockup đa thiết bị là gì?</h2>
                     <p><strong>Công cụ tạo mockup đa thiết bị</strong> là một công cụ trực tuyến miễn phí để kiểm tra sự tương thích của <strong>website</strong> trên các thiết bị apple bao gồm <strong>Apple iMac, MacBook, iPad và iPhone</strong>. Công cụ này rất hữu ích cho các nhà phát triển giao diện để mô phỏng mẫu web trên các thiết bị Apple khác nhau chỉ bằng một cú nhấp chuột.</p>
 
                     <br>
 
                     <div class="text-left">
-                        <h3>Làm thế nào để sử dụng công cụ tạo mockup đa thiết bị?</h3>
+                        <h3 class="h3" style="text-align: left;">Làm thế nào để sử dụng công cụ tạo mockup đa thiết bị?</h3>
 
-                        <p>Có hai cách để tạo mockup trang web của bạn bằng công cụ tạo mockup đa thiết bị</p>
+                        <p style="text-align: left;" class="py-3">Có hai cách để tạo mockup trang web của bạn bằng công cụ tạo mockup đa thiết bị</p>
 
                         <ul style="text-align:left">
                             <li>Chỉ cần nhập URL trang web của bạn vào khung nhập và nhấp vào nút "Tạo Mockup"</li>
@@ -220,7 +220,7 @@
 
                         <br>
 
-                        <h3>Các tính năng của công cụ tạo mockup đa thiết bị</h3>
+                        <h3 style="text-align: left;">Các tính năng của công cụ tạo mockup đa thiết bị</h3>
 
                         <ul style="text-align:left">
                             <li>Mockup trang web của bạn trên Apple iMac, MacBook, iPad và iPhone</li>

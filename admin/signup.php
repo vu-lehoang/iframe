@@ -26,15 +26,15 @@ unset($_SESSION['signup-data']);
     <div class="wrapper">
 
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-0 border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light rounded-0 border-bottom" style="background-color: #1a2232">
                 <div class="container">
-                    <a class="navbar-brand" href="#"><img src="../assets/images/logo-mdsco.png" width="140" alt="" /></a>
+                    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo-white.png" width="140" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon" style="filter: contrast(0);"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex: 0 0 auto">
                         <div class="d-flex ms-3 gap-3">
-                            <a href="../admin/index.php" class="btn btn-white btn-sm px-4 radius-30">Đăng nhập</a>
+                            <a href="../admin/index.php" class="btn btn-white btn-sm px-4 radius-30" style="background: white; color: #1a2232 !important">Đăng nhập</a>
                             <a href="../admin/signup.php" class="btn btn-primary btn-sm px-4 radius-30">Đăng ký</a>
                         </div>
                     </div>
@@ -48,10 +48,10 @@ unset($_SESSION['signup-data']);
                 <div class="mt-4">
                     <div class="card rounded-0 overflow-hidden shadow-none bg-white border">
                         <div class="row g-0">
-                            <div class="col-12 order-1 col-xl-8 d-flex align-items-center justify-content-center border-end">
+                            <div class="col-12 order-1 col-xl-6 d-flex align-items-center justify-content-center border-end">
                                 <img src="../assets/images/error/auth-img-register3.png" class="img-fluid" alt="">
                             </div>
-                            <div class="col-12 col-xl-4 order-xl-2">
+                            <div class="col-12 col-xl-6 order-xl-2">
                                 <div class="card-body p-4 p-sm-5">
                                     <h5 class="card-title">Đăng ký</h5>
                                     <?php if (isset($_SESSION['signup'])) : ?>
@@ -87,25 +87,25 @@ unset($_SESSION['signup-data']);
                                             <div class="col-12 ">
                                                 <label for="inputName" class="form-label">Tên tài khoản</label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="text" name="username" value="<?= $username ?>" placeholder="Username" class="form-control radius-30">
+                                                    <input type="text" name="username" value="<?= $username ?>" placeholder="Tên người dùng" class="form-control radius-30">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputEmailAddress" class="form-label">Địa chỉ email</label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="email" name="email" value="<?= $email ?>" placeholder="Email" class="form-control radius-30" id="inputEmailAddress">
+                                                    <input type="email" name="email" value="<?= $email ?>" placeholder="Địa chỉ email" class="form-control radius-30" id="inputEmailAddress">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputChoosePassword" class="form-label">Mật khẩu: </label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Create Password" class="form-control radius-30" id="inputChoosePassword">
+                                                    <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Mật khẩu" class="form-control radius-30" id="inputChoosePassword">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputChoosePassword" class="form-label">Nhập lại mật khẩu: </label>
                                                 <div class="ms-auto position-relative">
-                                                    <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Confirm Password" class="form-control radius-30" id="inputChoosePassword">
+                                                    <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Nhập lại mật khẩu" class="form-control radius-30" id="inputChoosePassword">
                                                 </div>
                                             </div>
 
@@ -116,7 +116,7 @@ unset($_SESSION['signup-data']);
                                                 </div>
                                             </div>
                                             <div class="col-12 text-center">
-                                                <p class="mb-0">Bạn đã có tài khoản? <a href="<?= ROOT_URL_ADMIN ?>signin.php">Đăng nhập tại đây</a></p>
+                                                <p class="mb-0">Bạn đã có tài khoản? <a href="<?= ROOT_URL_ADMIN ?>index.php">Đăng nhập tại đây</a></p>
                                             </div>
                                         </div>
                                     </form>
@@ -131,8 +131,8 @@ unset($_SESSION['signup-data']);
 
         <!--end page main-->
 
-        <footer class="bg-white border-top p-3 text-center">
-            <p class="mb-0">© Minh Duy Solutions 2022. All right reserved.</p>
+        <footer class="border-top p-3 text-center  fixed-bottom" style="background-color: #1a2232">
+            <p class="mb-0 text-white">© Minh Duy Solutions 2022. All right reserved.</p>
         </footer>
 
     </div>

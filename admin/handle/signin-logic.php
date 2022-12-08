@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     if (isset($_SESSION['signin'])) {
         $_SESSION['signin-data'] = $_POST;
         echo 'loi o day 1';
-        header('location: ' . ROOT_URL_ADMIN . 'signin.php');
+        header('location: ' . ROOT_URL_ADMIN . 'index.php');
         die();
     }
 } else {
