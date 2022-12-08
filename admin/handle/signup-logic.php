@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
         die();
     } else {
         // insert new user into users table database
-        $inser_user_query = "INSERT INTO users (firstname,user_name, email, password) VALUES ('$userName', '$email', '$hased_password')";
+        $inser_user_query = "INSERT INTO users (firstname,lastname,user_name, email, password) VALUES ('$firstName','$lastName','$userName', '$email', '$hased_password')";
         $insert_user_result = mysqli_query($connection, $inser_user_query);
 
         if (!mysqli_errno($connection)) {
@@ -57,7 +57,6 @@ if (isset($_POST['submit'])) {
             $_SESSION['signup-success'] = 'Đăng ký tài khoản thành công. Đăng nhập ngay!';
             header('location: ' . ROOT_URL_ADMIN . 'signin.php');
             die();
-            echo 'insert thành công';
         }
     }
 } else {

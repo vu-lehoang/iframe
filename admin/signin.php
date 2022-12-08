@@ -87,7 +87,7 @@ include("../layout/header.php");
                                             </div>
 
                                             <div class="col-12 text-center">
-                                                <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL ?>signup.php">Đăng ký tại đây</a></p>
+                                                <p class="mb-0">Bạn chưa có tài khoản? <a href="<?= ROOT_URL_ADMIN ?>signup.php">Đăng ký tại đây</a></p>
                                             </div>
                                         </div>
                                     </form>

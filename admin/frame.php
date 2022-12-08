@@ -1,6 +1,5 @@
 <?php
-include '../layout/header.php';
-error_reporting(0);
+include '../admin/layout/header.php';
 ?>
 <style>
   @media screen and (max-width:1000px) {
@@ -72,7 +71,6 @@ error_reporting(0);
     <?php
 
     if (isset($_POST['uploadfileImg'])) {
-      // resetIndex('hiddenInput', "../assets/images/frames/");
       $selectImg = $_POST['hiddenInput'];
       $time = time();
       $time_length = strlen($time) + 1;
@@ -193,7 +191,7 @@ error_reporting(0);
                         <div class="image-preview" align="center">
                           <img src="../assets/images/upload.png" class="preview-img" alt="" id="img">
                           <input type="hidden" name="fileAbc" class="input-file">
-                          <input type="file" name="choosefile" value="" id="choosefile" style="display:none" />
+                          <input type="file" name="choosefile" value="" id="choosefile" style="display:none" accept="image/png, image/gif, image/jpeg" />
                           <div style="margin-top: 10px"></div>
                           <label for="choosefile" class="btn btn-outline-primary px-5 radius-30 mb-2" style="margin-right: 5px">Chọn ảnh</label>
                           <button type="submit" name="uploadfile" class="btn btn-outline-success px-5 radius-30 mb-2" style="margin-right: 5px">
