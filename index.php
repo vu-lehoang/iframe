@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
   <script src="./assets/js/bundle.js"></script>
 
   <title>Công cụ tạo khung cho ảnh avatar</title>
@@ -119,6 +119,7 @@
     console.log(idAnh);
   </script>
    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 
