@@ -46,20 +46,32 @@ include("../layout/header.php");
                             <div class="col-12 col-xl-4 order-xl-2">
                                 <div class="card-body p-4 p-sm-5">
                                     <?php if (isset($_SESSION['signup-success'])) : ?>
-                                        <div class="alert__message success">
-                                            <p>
-                                                <?= $_SESSION['signup-success'];
-                                                unset($_SESSION['signup-success']);
-                                                ?>
-                                            </p>
-                                        </div>
+                                        <div class="alert border-0 bg-light-success alert-dismissible fade show py-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="fs-3 text-success"><i class="bi bi-check-circle-fill"></i>
+                                                </div>
+                                                <div class="ms-3">
+                                                <div class="text-success">
+                                                    <?= $_SESSION['signup-success'];
+                                                        unset($_SESSION['signup-success']);
+                                                    ?></div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
                                     <?php elseif (isset($_SESSION['signin'])) :  ?>
-                                        <div class="alert__message error">
-                                            <p>
+                                        <div class="alert border-0 bg-light-danger alert-dismissible fade show py-2">
+                                            <div class="d-flex align-items-center">
+                                            <div class="fs-3 text-danger"><i class="bi bi-x-circle-fill"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <div class="text-danger">
                                                 <?= $_SESSION['signin'];
-                                                unset($_SESSION['signin']);
-                                                ?>
-                                            </p>
+                                                unset($_SESSION['signin']);?>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     <?php endif ?>
                                     <h5 class="card-title">Đăng nhập</h5>

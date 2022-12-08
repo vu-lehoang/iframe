@@ -9,176 +9,29 @@ unset($_SESSION['signin-data']);
 ?>
 
 <body>
-  <?php if ($_SESSION['sigin-succes']) : ?>
+  <?php if ($_SESSION['sigin-succes']) : header("Location:../admin/frame.php") ?>
     <!--start wrapper-->
-    <div class="wrapper">
-      <!--start top header-->
-      <header class="top-header">
-        <nav class="navbar navbar-expand gap-3 align-items-center">
-          <div class="mobile-toggle-icon fs-3">
-            <i class="bi bi-list"></i>
-          </div>
-          <div class="top-navbar-right ms-auto">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item dropdown dropdown-user-setting">
-                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
-                  <div class="user-setting d-flex align-items-center">
-                    <img src="../assets/images/logo_favicon.png" class="user-img" alt="">
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <div class="d-flex align-items-center">
-                        <img src="../assets/images/logo_favicon.png" alt="" class="rounded-circle" width="54" height="54">
-                        <div class="ms-3">
-                          <h6 class="mb-0 dropdown-user-name">Minh Duy Solutions</h6>
-                          <small class="mb-0 dropdown-user-designation text-secondary">Admin</small>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../admin/logout.php">
-                      <div class="d-flex align-items-center">
-                        <div class=""><i class="bi bi-lock-fill"></i></div>
-                        <div class="ms-3"><span>Logout</span></div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <!--end top header-->
-
-      <!--start sidebar -->
-      <aside class="sidebar-wrapper" data-simplebar="true">
-        <div class="sidebar-header">
-          <div>
-            <img src="../assets/images/logo_favicon.png" class="logo-icon" alt="logo icon">
-          </div>
-          <div>
-            <h4 class="logo-text">MDSCO</h4>
-          </div>
-          <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
-          </div>
-        </div>
-        <!--navigation-->
-        <ul class="metismenu" id="menu">
-
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="bi bi-grid-fill"></i>
-              </div>
-              <div class="menu-title">Application</div>
-            </a>
-            <ul>
-              <!-- <li> <a href="app-emailbox.html"><i class="bi bi-circle"></i>Email</a>
-                </li> -->
-              <li> <a href="frame.php"><i class="bi bi-circle"></i>Frame</a>
-              </li>
-
-            </ul>
-          </li>
-
-
-
-
-          <!--end navigation-->
-      </aside>
-      <!--end sidebar -->
-
-      <!--start content-->
-      <main class="page-content">
-
-
-
-
-      </main>
-      <!--end page main-->
-
-      <!--start overlay-->
-      <div class="overlay nav-toggle-icon"></div>
-      <!--end overlay-->
-
-      <!--Start Back To Top Button-->
-      <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
-      <!--End Back To Top Button-->
-
-      <!--start switcher-->
-      <div class="switcher-body">
-        <button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-paint-bucket me-0"></i></button>
-        <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
-          <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-          </div>
-          <div class="offcanvas-body">
-            <h6 class="mb-0">Theme Variation</h6>
-            <hr>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1">
-              <label class="form-check-label" for="LightTheme">Light</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2">
-              <label class="form-check-label" for="DarkTheme">Dark</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme" value="option3" checked>
-              <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
-            </div>
-            <hr>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="MinimalTheme" value="option3">
-              <label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
-            </div>
-            <hr />
-            <h6 class="mb-0">Header Colors</h6>
-            <hr />
-            <div class="header-colors-indigators">
-              <div class="row row-cols-auto g-3">
-                <div class="col">
-                  <div class="indigator headercolor1" id="headercolor1"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor2" id="headercolor2"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor3" id="headercolor3"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor4" id="headercolor4"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor5" id="headercolor5"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor6" id="headercolor6"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor7" id="headercolor7"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor8" id="headercolor8"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--end switcher-->
-
-    </div>
-    <!--end wrapper-->
   <?php else : ?>
-    <main class="authentication-content">
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-0 border-bottom">
+                <div class="container">
+                    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo-mdsco.png" width="140" alt="" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex: 0 0 auto ">
+                        <div class="d-flex ms-3 gap-3">
+                            <a href="../admin/index.php" class="btn btn-primary btn-sm px-4 radius-30">Đăng nhập</a>
+                            <a href="../admin/signup.php" class="btn btn-white btn-sm px-4 radius-30">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--start content-->
+        <main class="authentication-content">
       <div class="container">
         <div class="mt-4">
           <div class="card rounded-0 overflow-hidden shadow-none border mb-5 mb-lg-0">
@@ -189,20 +42,32 @@ unset($_SESSION['signin-data']);
               <div class="col-12 col-xl-4 order-xl-2">
                 <div class="card-body p-4 p-sm-5">
                   <?php if (isset($_SESSION['signup-success'])) : ?>
-                    <div class="alert__message success">
-                      <p>
-                        <?= $_SESSION['signup-success'];
-                        unset($_SESSION['signup-success']);
-                        ?>
-                      </p>
+                    <div class="alert border-0 bg-light-success alert-dismissible fade show py-2">
+                      <div class="d-flex align-items-center">
+                          <div class="fs-3 text-success"><i class="bi bi-check-circle-fill"></i>
+                          </div>
+                          <div class="ms-3">
+                          <div class="text-success">
+                              <?= $_SESSION['signup-success'];
+                                  unset($_SESSION['signup-success']);
+                              ?></div>
+                          </div>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                   <?php elseif (isset($_SESSION['signin'])) :  ?>
-                    <div class="alert__message error">
-                      <p>
-                        <?= $_SESSION['signin'];
-                        unset($_SESSION['signin']);
-                        ?>
-                      </p>
+                    <div class="alert border-0 bg-light-danger alert-dismissible fade show py-2">
+                        <div class="d-flex align-items-center">
+                        <div class="fs-3 text-danger"><i class="bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="ms-3">
+                            <div class="text-danger">
+                            <?= $_SESSION['signin'];
+                            unset($_SESSION['signin']);?>
+                            </div>
+                        </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                   <?php endif ?>
                   <h5 class="card-title">Đăng nhập</h5>
@@ -241,6 +106,14 @@ unset($_SESSION['signin-data']);
         </div>
       </div>
     </main>
+
+        <!--end page main-->
+
+        <footer class="bg-white border-top p-3 text-center fixed-bottom">
+            <p class="mb-0">© Minh Duy Solutions 2022. All right reserved.</p>
+        </footer>
+
+    </div>
   <?php endif; ?>
 
   <!-- Bootstrap bundle JS -->

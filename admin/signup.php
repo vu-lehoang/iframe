@@ -55,13 +55,18 @@ unset($_SESSION['signup-data']);
                                 <div class="card-body p-4 p-sm-5">
                                     <h5 class="card-title">Đăng ký</h5>
                                     <?php if (isset($_SESSION['signup'])) : ?>
-                                        <div class="alert__message error">
-                                            <p>
+                                        <div class="alert border-0 bg-light-danger alert-dismissible fade show py-2">
+                                            <div class="d-flex align-items-center">
+                                            <div class="fs-3 text-danger"><i class="bi bi-x-circle-fill"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <div class="text-danger">
                                                 <?= $_SESSION['signup'];
-                                                unset($_SESSION['signup']);
-                                                ?>
-                                            </p>
-
+                                                unset($_SESSION['signup']);?>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     <?php endif ?>
                                     <form action="<?= ROOT_URL_ADMIN ?>handle/signup-logic.php" method="POST" enctype="multipart/form-data" class="form-body">
